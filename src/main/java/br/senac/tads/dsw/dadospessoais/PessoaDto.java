@@ -3,20 +3,36 @@ package br.senac.tads.dsw.dadospessoais;
 import java.time.LocalDate;
 import java.util.List;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Size;
+
 public class PessoaDto {
 
+    @NotBlank
+    @Size(min = 3, max = 64)
     private String username;
-
+    
+    @NotBlank
+    @Size(min = 3, max = 100)
     private String nome;
 
+    @PastOrPresent
     private LocalDate dataNascimento;
 
+    @NotBlank
+    @Size(min = 3, max = 100)
+    @Email
     private String email;
 
+    @Size(min = 0, max = 20)
     private String telefone;
+    
 
     private List<String> interesses;
 
+    
     private String senha;
 
     public PessoaDto(String username, String nome, LocalDate dataNascimento, String email, String telefone,
@@ -85,8 +101,6 @@ public class PessoaDto {
     public String getSenha() {
         return senha;
     }
-
-    
 
     
 }
