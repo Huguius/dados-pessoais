@@ -13,9 +13,9 @@ public class PessoaDto {
     @NotBlank
     @Size(min = 3, max = 64)
     private String username;
-    
+
     @NotBlank
-    @Size(min = 3, max = 100)
+    @Size(min = 1, max = 100)
     private String nome;
 
     @PastOrPresent
@@ -28,49 +28,22 @@ public class PessoaDto {
 
     @Size(min = 0, max = 20)
     private String telefone;
-    
 
     private List<String> interesses;
 
-    
     private String senha;
 
-    public PessoaDto(String username, String nome, LocalDate dataNascimento, String email, String telefone,
-            List<String> interesses, String senha) {
+    public PessoaDto() {
+    }
+
+    public PessoaDto(String username, String nome, LocalDate dataNascimento,
+            String email, String telefone, List<String> interesses, String senha) {
         this.username = username;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.email = email;
         this.telefone = telefone;
         this.interesses = interesses;
-        this.senha = senha;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public void setInteresses(List<String> interesses) {
-        this.interesses = interesses;
-    }
-
-    public void setSenha(String senha) {
         this.senha = senha;
     }
 
@@ -78,29 +51,56 @@ public class PessoaDto {
         return username;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getNome() {
         return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getTelefone() {
         return telefone;
     }
 
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
     public List<String> getInteresses() {
         return interesses;
+    }
+
+    public void setInteresses(List<String> interesses) {
+        this.interesses = interesses;
     }
 
     public String getSenha() {
         return senha;
     }
 
-    
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
 }

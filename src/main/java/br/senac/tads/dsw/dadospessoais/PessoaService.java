@@ -16,15 +16,17 @@ public class PessoaService {
     public PessoaService() {
         mapPessoas = new HashMap<>();
         mapPessoas.put("fulano",
-                new PessoaDto("fulano", "Fulano Da Silva", LocalDate.parse("2000-10-20"), "fulano@email.com",
-                        "11 99454-4762", List.of("Java", "Srping Boot", "Bleach Brave Souls", "Anime"), "Abcd1234"));
-        mapPessoas.put("Hugo",
-                new PessoaDto("hugojo", "Hugojo Toji Fushiguro", LocalDate.parse("1988-10-11"), "hugojo@email.com",
-                        "11 99454-4762", List.of("Bleach Brave Souls", "Anime"), "TojiHugo"));
-        mapPessoas.put("Gabriel",
-                new PessoaDto("gayzao", "Gabriel Gay Shiquedoni", LocalDate.parse("2024-04-24"), "gay@email.com",
-                        "11 99454-4762", List.of("aquelescara", "yaoi"), "shiquedoni"));
-
+            new PessoaDto("fulano", "Fulano da Silva", LocalDate.parse("2000-10-20"),
+            "fulano@email.com", "11 91234-1234", List.of("Java", "Spring Boot"),
+            "Abcd1234"));
+        mapPessoas.put("ciclano",
+            new PessoaDto("ciclano", "Ciclano de Souza", LocalDate.parse("1999-05-25"),
+            "ciclano@email.com", "11 98765-8765", List.of("HTML", "CSS", "Javascript"),
+            "Abcd1234"));
+        mapPessoas.put("beltrana",
+            new PessoaDto("beltrana", "Beltrana dos Santos", LocalDate.parse("2001-02-14"),
+            "beltrana@email.com", "11 91122-1122", List.of("Javascript", "React", "Angular"),
+            "Abcd1234"));
     }
 
     public List<PessoaDto> findAll() {
@@ -36,8 +38,8 @@ public class PessoaService {
     }
 
     public PessoaDto addNew(PessoaDto dto) {
-    
-        return mapPessoas.put(dto.getUsername(),dto);
+        mapPessoas.put(dto.getUsername(), dto);
+        return dto;
     }
 
     public PessoaDto update(String username, PessoaDto dto) {
